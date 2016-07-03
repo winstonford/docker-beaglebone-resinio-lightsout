@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "ligthout.sh starting"
+echo "/usr/src/app/lightsout.sh starting"
 
-# Turn off heartbeat led lights
-# Thanks to http://hoeckerson.de/notes/2014/07/stoppen-the-blinkenlights/
+echo "Turn off heartbeat led lights"
+echo "Thanks to http://hoeckerson.de/notes/2014/07/stoppen-the-blinkenlights/"
+
 
 # For older distros
 
@@ -19,12 +20,14 @@ echo none > /sys/class/leds/beaglebone\:green\:mmc0/trigger
 echo none > /sys/class/leds/beaglebone\:green\:usr2/trigger
 echo none > /sys/class/leds/beaglebone\:green\:usr3/trigger
 
-# Turn off power led light.
-# Thanks to http://beagleboard.narkive.com/hXsadizL/disable-the-power-led
+sleep 2s
+
+echo "Turn off power led light."
+echo "Thanks to http://beagleboard.narkive.com/hXsadizL/disable-the-power-led"
 
 i2cset -f -y 0 0x24 0x0B 0x6e
 i2cset -f -y 0 0x24 0x13 0x23
 i2cset -f -y 0 0x24 0x0B 0x6e
 i2cset -f -y 0 0x24 0x13 0x23
 
-echo "lightout.sh ending"
+echo "/usr/src/app/lightsout.sh ending"
