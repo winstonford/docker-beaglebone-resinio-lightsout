@@ -4,7 +4,9 @@ A dead simple resin.io app that turns off the led lights on a beaglebone black r
 
 ## What
 
-Set triggers in the device tree, and set registers visible through the I2c bus.
+During boot up, the led lights follow the normal solid on power and blinking heartbeat pattern, but once the app fires the script, the led lights go dark. 
+
+The script sets triggers in the device tree, and sets registers visible through the I2c bus.
 
 ## Why
 
@@ -24,8 +26,21 @@ There's nothing to do with the app.  It just works.  For me at least.
 
 1. Figure out how to turn off led lights on the usb wifi dongle.
 
+https://www.topbug.net/blog/2015/01/13/control-the-led-on-a-usb-wifi-adapter-on-linux/
+
+
+
+```
+root@beaglebone-93a5db:/# lsusb
+Bus 001 Device 007: ID 7392:7811 Edimax Technology Co., Ltd EW-7811Un 802.11n Wireless Adapter [Realtek RTL8188CUS]
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
 
 ## Notes
+
+The led lights do serve a purpose. I have noticed that when a beaglebone locks up and becomes unreachable, the heartbeat is gone and 2 of the 4 leds are on solid.    I have also observed this same light pattern when the voltage dips below about 4.85, and the device locks up.  In the event of recurring freezes, let the led lights signal normally, run power through a usb meter, and watch for voltage above or below 5 volts. The spec is something like 5 volts +/- 0.25.
 
 ## Disclaimer
 
