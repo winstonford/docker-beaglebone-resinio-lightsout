@@ -1,6 +1,6 @@
-# Light Out
+# Lights Out
 
-A dead simple resin.io app that turns off the led lights on a beaglebone black running docker.
+A simple Resin.io app that turns off the led lights on a beaglebone black running resin os and docker.
 
 ## What
 
