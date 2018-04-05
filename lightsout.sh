@@ -6,14 +6,14 @@ echo "Turn off heartbeat led lights"
 echo "Thanks to http://hoeckerson.de/notes/2014/07/stoppen-the-blinkenlights/"
 
 
-# For older distros
+# For older 
 
 echo none > /sys/class/leds/beaglebone\:green\:usr0/trigger
 echo none > /sys/class/leds/beaglebone\:green\:usr1/trigger
 echo none > /sys/class/leds/beaglebone\:green\:usr2/trigger
 echo none > /sys/class/leds/beaglebone\:green\:usr3/trigger
 
-# For new distros
+# For newer
 
 echo none > /sys/class/leds/beaglebone\:green\:heartbeat/trigger
 echo none > /sys/class/leds/beaglebone\:green\:mmc0/trigger
